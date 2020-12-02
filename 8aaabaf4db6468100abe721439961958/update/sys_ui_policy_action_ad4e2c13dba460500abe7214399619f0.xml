@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>estimate_table_excel</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-23 05:34:40</sys_created_on>
+        <sys_id>ad4e2c13dba460500abe7214399619f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>estimate_table_excel</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_ui_policy_action_ad4e2c13dba460500abe7214399619f0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-23 05:34:40</sys_updated_on>
+        <table>x_icir_dealmaker_project_estimate</table>
+        <ui_policy display_value="Hide Estimate Table Excel Field">a52ee813dba460500abe72143996190b</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+</record_update>

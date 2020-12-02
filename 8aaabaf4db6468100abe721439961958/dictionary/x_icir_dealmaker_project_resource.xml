@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Project Resource" max_length="40" name="x_icir_dealmaker_project_resource" sizeclass="5" type="collection">
+        <element label="Name" max_length="100" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Order" max_length="15" name="order" type="integer"/>
+        <element choice="3" label="Type" max_length="40" name="type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Onshore" sequence="100" value="onshore"/>
+                <element inactive_on_update="false" label="Offshore" sequence="200" value="offshore"/>
+            </choice>
+        </element>
+    </element>
+</database>

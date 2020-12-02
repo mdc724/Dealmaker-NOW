@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <misc>0</misc>
+        <order>100</order>
+        <question display_value="How many total foundational records will be migrated (e.g. Company, Department, Location, Cost Center)?">7a16b462db6cac100abe72143996199a</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-21 07:17:35</sys_created_on>
+        <sys_id>99a27a2edbe0ec100abe721439961904</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>N/A</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>question_choice_99a27a2edbe0ec100abe721439961904</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-21 07:17:35</sys_updated_on>
+        <text>N/A</text>
+        <value>N/A</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=99a27a2edbe0ec100abe721439961904"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>99a27a2edbe0ec100abe721439961904</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-21 07:17:35</sys_created_on>
+        <sys_id>3aa2ba2edbe0ec100abe7214399619b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-21 07:17:35</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>99a27a2edbe0ec100abe721439961904</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-21 07:17:35</sys_created_on>
+        <sys_id>fea2ba2edbe0ec100abe7214399619b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-21 07:17:35</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>

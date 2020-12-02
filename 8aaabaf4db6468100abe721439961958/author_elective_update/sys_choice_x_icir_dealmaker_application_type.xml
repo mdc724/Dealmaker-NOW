@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="type" table="x_icir_dealmaker_application" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <name>x_icir_dealmaker_application</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-16 05:56:57</sys_created_on>
+            <sys_id>8d40744ddbe868100abe721439961986</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>type</sys_name>
+            <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+            <sys_update_name>sys_choice_x_icir_dealmaker_application_type</sys_update_name>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-16 05:56:57</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Platform Fundamental</label>
+            <language>en</language>
+            <name>x_icir_dealmaker_application</name>
+            <sequence>100</sequence>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-16 06:00:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3b01f08ddbe868100abe721439961901</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-12-01 00:35:14</sys_updated_on>
+            <value>platform_fundamental</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Module</label>
+            <language>en</language>
+            <name>x_icir_dealmaker_application</name>
+            <sequence>200</sequence>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-16 05:56:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>df30744ddbe868100abe721439961913</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-12-01 00:35:17</sys_updated_on>
+            <value>module</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Feature/Plugin</label>
+            <language>en</language>
+            <name>x_icir_dealmaker_application</name>
+            <sequence>300</sequence>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-16 05:57:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bd40744ddbe868100abe721439961919</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-12-01 00:35:37</sys_updated_on>
+            <value>feature_plugin</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Integration</label>
+            <language>en</language>
+            <name>x_icir_dealmaker_application</name>
+            <sequence>400</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-12-01 00:35:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3166383ddb782c50af7ce8cd139619e3</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-12-01 00:35:21</sys_updated_on>
+            <value>integration</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>e7aa5faddbf02c50af7ce8cd1396197b</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_m2m_app_requirement_app">
+    <x_icir_dealmaker_m2m_app_requirement_app action="INSERT_OR_UPDATE">
+        <application display_value="Continual Improvement Management">a3c0f1b8dbfc2850af7ce8cd13961976</application>
+        <application_requirement display_value="Create Improvement Initiatives measured by Manual method">30aad3addbf02c50af7ce8cd139619ca</application_requirement>
+        <order>400</order>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 17:54:10</sys_created_on>
+        <sys_id>e7aa5faddbf02c50af7ce8cd1396197b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 17:55:13</sys_updated_on>
+    </x_icir_dealmaker_m2m_app_requirement_app>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 21:32:39</sys_created_on>
+        <sys_id>00bcccb1dbf42c50af7ce8cd139619e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2020-11-30 12:54:10</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_00bcccb1dbf42c50af7ce8cd139619e6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:32:39</sys_updated_on>
+        <tablename>x_icir_dealmaker_m2m_app_requirement_app</tablename>
+    </sys_metadata_link>
+</record_update>

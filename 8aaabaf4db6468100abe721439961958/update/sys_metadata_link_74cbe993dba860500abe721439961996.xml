@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>df133001db2c68100abe721439961975</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_application_requirement">
+    <x_icir_dealmaker_application_requirement action="INSERT_OR_UPDATE">
+        <base_development_estimate>2</base_development_estimate>
+        <default_quantity>2</default_quantity>
+        <name>Configure new or existing UI Actions</name>
+        <notes>Quantity = number of actions (* Number of tables if Custom App)</notes>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-16 06:09:24</sys_created_on>
+        <sys_id>df133001db2c68100abe721439961975</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-01 00:26:03</sys_updated_on>
+        <type>variable</type>
+    </x_icir_dealmaker_application_requirement>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-23 10:03:14</sys_created_on>
+        <sys_id>74cbe993dba860500abe721439961996</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Configure new or existing UI Actions</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_74cbe993dba860500abe721439961996</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-01 00:52:26</sys_updated_on>
+        <tablename>x_icir_dealmaker_application_requirement</tablename>
+    </sys_metadata_link>
+</record_update>

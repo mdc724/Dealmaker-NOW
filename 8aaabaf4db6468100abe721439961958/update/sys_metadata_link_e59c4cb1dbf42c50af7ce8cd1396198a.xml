@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>9ddb3f21dbb42c50af7ce8cd139619e8</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_m2m_app_requirement_app">
+    <x_icir_dealmaker_m2m_app_requirement_app action="INSERT_OR_UPDATE">
+        <application display_value="Service Portal">67b4a481dbe868100abe721439961985</application>
+        <application_requirement display_value="SP: Pages, Navigation and Content Layouts">0feafbeddb742c50af7ce8cd13961989</application_requirement>
+        <order>200</order>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 20:19:01</sys_created_on>
+        <sys_id>9ddb3f21dbb42c50af7ce8cd139619e8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 20:19:18</sys_updated_on>
+    </x_icir_dealmaker_m2m_app_requirement_app>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 21:32:12</sys_created_on>
+        <sys_id>e59c4cb1dbf42c50af7ce8cd1396198a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2020-11-30 15:19:01</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_e59c4cb1dbf42c50af7ce8cd1396198a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:32:12</sys_updated_on>
+        <tablename>x_icir_dealmaker_m2m_app_requirement_app</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Project Estimate" max_length="40" name="x_icir_dealmaker_project_estimate" sizeclass="12" type="collection">
+        <element label="Assumptions" max_length="4000" name="assumptions" type="string"/>
+        <element label="Customer" mandatory="true" max_length="255" name="customer" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Estimated Cost" max_length="20000" name="estimated_cost_table" read_only="true" type="html"/>
+        <element attributes="edge_encryption_enabled=true" label="Estimate Data" max_length="20000" name="estimate_data" type="json"/>
+        <element attributes="edge_encryption_enabled=true" label="Estimate" max_length="20000" name="estimate_table" read_only="true" type="html"/>
+        <element attributes="edge_encryption_enabled=true" label="Estimate Table Excel" max_length="20000" name="estimate_table_excel" type="html"/>
+        <element attributes="edge_encryption_enabled=true" label="Has customer project manager" max_length="40" name="has_customer_project_manager" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Has other ServiceNow projects" max_length="40" name="has_other_projects" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Is current customer" max_length="40" name="is_current_customer" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Is custom application" max_length="40" name="is_custom_application" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Is domain-separated" max_length="40" name="is_domain_separated" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Is net new implementation" max_length="40" name="is_net_new_implementation" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Is nice and reasonable" max_length="40" name="is_reasonable" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Project Length" max_length="40" name="project_length" type="glide_duration"/>
+        <element display="true" label="Project Title" mandatory="true" max_length="255" name="project_title" type="string"/>
+        <element choice="1" label="Number of business area employees" mandatory="true" max_length="100" name="size_business_area" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1 to 10" sequence="100" value="1 to 10"/>
+                <element inactive_on_update="false" label="11 to 100" sequence="200" value="11 to 100"/>
+                <element inactive_on_update="false" label="101+" sequence="300" value="101+"/>
+            </choice>
+        </element>
+        <element choice="1" label="Number of CMDB tables" mandatory="true" max_length="100" name="size_cmdb" type="string">
+            <choice>
+                <element inactive_on_update="false" label="N/A" sequence="100" value="N/A"/>
+                <element inactive_on_update="false" label="1 to 5" sequence="200" value="1 to 5"/>
+                <element inactive_on_update="false" label="6 to 10" sequence="300" value="6 to 10"/>
+                <element inactive_on_update="false" label="11+" sequence="400" value="11+"/>
+            </choice>
+        </element>
+        <element choice="1" label="Number of deliverables" mandatory="true" max_length="100" name="size_deliverables" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1 to 3" sequence="100" value="1 to 3"/>
+                <element inactive_on_update="false" label="4 to 6" sequence="200" value="4 to 6"/>
+                <element inactive_on_update="false" label="7+" sequence="300" value="7+"/>
+            </choice>
+        </element>
+        <element choice="1" label="Number of foundation data records" mandatory="true" max_length="100" name="size_foundation_data" type="string">
+            <choice>
+                <element inactive_on_update="false" label="N/A" sequence="100" value="N/A"/>
+                <element inactive_on_update="false" label="1 to 100" sequence="200" value="1 to 100"/>
+                <element inactive_on_update="false" label="101 to 500" sequence="300" value="101 to 500"/>
+                <element inactive_on_update="false" label="501+" sequence="400" value="501+"/>
+            </choice>
+        </element>
+        <element choice="1" label="Number of organization employees" mandatory="true" max_length="100" name="size_organization" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1 to 1000" sequence="100" value="1 to 1000"/>
+                <element inactive_on_update="false" label="1,001 to 10,000" sequence="200" value="1,001 to 10,000"/>
+                <element inactive_on_update="false" label="10,001+" sequence="300" value="10,001+"/>
+            </choice>
+        </element>
+        <element choice="1" label="Likelihood of scope creep" mandatory="true" max_length="100" name="size_scope_creep" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Customer stays strictly in scope" sequence="100" value="Customer stays strictly in scope"/>
+                <element inactive_on_update="false" label="Customer sometimes strays from the scope" sequence="200" value="Customer sometimes strays from the scope"/>
+                <element inactive_on_update="false" label="Customer increases scope often" sequence="300" value="Customer increases scope often"/>
+            </choice>
+        </element>
+        <element choice="1" label="Number of transaction data records" mandatory="true" max_length="100" name="size_transaction_data" type="string">
+            <choice>
+                <element inactive_on_update="false" label="N/A" sequence="100" value="N/A"/>
+                <element inactive_on_update="false" label="1 to 10,000" sequence="200" value="1 to 10,000"/>
+                <element inactive_on_update="false" label="10,001 to 100,000" sequence="300" value="10,001 to 100,000"/>
+                <element inactive_on_update="false" label="100,001+" sequence="400" value="100,001+"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Suggested Staffing Plan" max_length="20000" name="suggested_staffing_plan_table" read_only="true" type="html"/>
+        <element label="Estimate Version" max_length="40" name="version" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Will be synchronized" max_length="40" name="will_be_synchronized" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Will require training" max_length="40" name="will_require_training" type="boolean"/>
+    </element>
+</database>

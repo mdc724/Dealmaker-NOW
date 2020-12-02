@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="55f41743db6060500abe7214399619f5" sys_domain="global" table="x_icir_dealmaker_project_estimate" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 23:04:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d9f41743db6060500abe7214399619f8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">19f41743db6060500abe7214399619a3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 23:04:21</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 23:04:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d9f41743db6060500abe7214399619f9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Company Sizing" display_value="Company Sizing" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">d9f41743db6060500abe7214399619a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 23:04:22</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 23:04:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>95f41743db6060500abe7214399619fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Project" display_value="Project" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">ddf41743db6060500abe7214399619a6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 23:04:22</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 23:04:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d1f45743db6060500abe721439961901</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Environment" display_value="Environment" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">91f41743db6060500abe7214399619a8</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 23:04:22</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-23 00:27:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bbd7af43dba060500abe721439961905</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Data Migration" display_value="Data Migration" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">b7d7af43dba060500abe721439961900</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-23 00:27:00</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-23 00:27:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b7d7af43dba060500abe72143996192f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Other Factors" display_value="Other Factors" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">ffd7af43dba060500abe721439961901</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-23 00:27:00</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-23 07:02:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>84524557dbe460500abe721439961969</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Estimate" display_value="Estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">3b424557dbe460500abe72143996191a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-23 07:02:08</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-23 06:54:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>637045d3dbe460500abe7214399619e8</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_icir_dealmaker_project_estimate" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">55f41743db6060500abe7214399619f5</sys_ui_form>
+            <sys_ui_section caption="Staffing Plan" display_value="Staffing Plan" name="x_icir_dealmaker_project_estimate" sys_domain="global" view="Default view">ab7045d3dbe460500abe7214399619e3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-23 07:02:08</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_icir_dealmaker_project_estimate</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 23:04:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>55f41743db6060500abe7214399619f5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_icir_dealmaker_project_estimate</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+            <sys_update_name>sys_ui_form_sections_55f41743db6060500abe7214399619f5</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 23:04:21</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

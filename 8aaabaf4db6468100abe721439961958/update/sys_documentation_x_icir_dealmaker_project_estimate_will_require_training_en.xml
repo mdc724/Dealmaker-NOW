@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="will_require_training" label="Will require training" language="en" table="x_icir_dealmaker_project_estimate">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>will_require_training</element>
+            <help/>
+            <hint/>
+            <label>Will require training</label>
+            <language>en</language>
+            <name>x_icir_dealmaker_project_estimate</name>
+            <plural>Will require trainings</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 22:06:55</sys_created_on>
+            <sys_id>bfc7cf03db2060500abe7214399619fc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Will require training</sys_name>
+            <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+            <sys_update_name>sys_documentation_x_icir_dealmaker_project_estimate_will_require_training_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 22:06:55</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

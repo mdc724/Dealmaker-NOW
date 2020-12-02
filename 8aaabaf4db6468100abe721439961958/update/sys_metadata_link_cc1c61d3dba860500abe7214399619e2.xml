@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>5b67e95fdb6860500abe7214399619f8</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_application_requirement">
+    <x_icir_dealmaker_application_requirement action="INSERT_OR_UPDATE">
+        <base_development_estimate>160</base_development_estimate>
+        <default_quantity>1</default_quantity>
+        <name>BOPIS</name>
+        <notes/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-23 09:44:17</sys_created_on>
+        <sys_id>5b67e95fdb6860500abe7214399619f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-23 09:44:17</sys_updated_on>
+        <type>fixed</type>
+    </x_icir_dealmaker_application_requirement>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-23 10:04:32</sys_created_on>
+        <sys_id>cc1c61d3dba860500abe7214399619e2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>BOPIS</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_cc1c61d3dba860500abe7214399619e2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:27:44</sys_updated_on>
+        <tablename>x_icir_dealmaker_application_requirement</tablename>
+    </sys_metadata_link>
+</record_update>

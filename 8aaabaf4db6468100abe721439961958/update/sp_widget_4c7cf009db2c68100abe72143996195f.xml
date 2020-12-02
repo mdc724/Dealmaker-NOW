@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $rootScope) {
+	/* widget controller */
+	var c = this;
+
+	// Set stock activity percentages and temps upon load
+	$scope.data.reqEst = 25; $scope.data.reqEst_Temp = "25";
+	$scope.data.qaEst = 40; $scope.data.qaEst_Temp = "40";
+	$scope.data.trainEst = 10; $scope.data.trainEst_Temp = "10";
+	$scope.data.implEst = 5; $scope.data.implEst_Temp = "5";
+	$scope.data.docsEst = 10; $scope.data.docsEst_Temp = "10";
+	$scope.data.wtyEst = 10; $scope.data.wtyEst_Temp = "10";
+	$scope.data.contgEst = 15; $scope.data.contgEst_Temp = "15";
+	
+	
+	
+	
+	
+	// Replace Calculated Activity Percentage with a manual override
+	$scope.replaceActivityPercentage = function() {
+		
+		// Set activity percentages to temp percentages
+		$scope.data.reqEst = parseFloat($scope.data.reqEst_Temp);
+		$scope.data.qaEst = parseFloat($scope.data.qaEst_Temp);
+		$scope.data.trainEst = parseFloat($scope.data.trainEst_Temp);
+		$scope.data.implEst = parseFloat($scope.data.implEst_Temp);
+		$scope.data.docsEst = parseFloat($scope.data.docsEst_Temp);
+		$scope.data.wtyEst = parseFloat($scope.data.wtyEst_Temp);
+		$scope.data.contgEst = parseFloat($scope.data.contgEst_Temp);
+		
+		// Skip weight offsets and recalculate all percentages
+		$scope.updateAllRequirementsPercentages();
+	}
+
+	
+	
+	
+	
+	// Calculate stock activity percentages, adjust with question choice weight offsets				 
+	$scope.updateAllWeightOffsets = function() {
+		
+		// Set stock activity percentages and temps
+		$scope.data.reqEst = 25; $scope.data.reqEst_Temp = "25";
+		$scope.data.qaEst = 40; $scope.data.qaEst_Temp = "40";
+		$scope.data.trainEst = 10; $scope.data.trainEst_Temp = "10";
+		$scope.data.implEst = 5; $scope.data.implEst_Temp = "5";
+		$scope.data.docsEst = 10; $scope.data.docsEst_Temp = "10";
+		$scope.data.wtyEst = 10; $scope.data.wtyEst_Temp = "10";
+		$scope.data.contgEst = 15; $scope.data.contgEst_Temp = "15";
+		
+		
+		
+		// Get weight offset of each question and question choice
+		var g_form = $scope.page.g_form;
+		
+		for (var i = 0; i < $scope.data.weightOffsets.length; i++) {
+
+			var wgtOft = $scope.data.weightOffsets[i];
+			if (wgtOft.question_choice == "Yes")
+				wgtOft.question_choice = "true";
+			else if (wgtOft.question_choice == "No")
+				wgtOft.question_choice = "false";
+				
+
+			if (wgtOft.question == "size_business_area" &&
+					wgtOft.question_choice == $scope.page.g_form.getValue("size_business_area")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "size_organization" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("size_organization")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "has_customer_project_manager" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("has_customer_project_manager")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "is_net_new_implementation" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("is_net_new_implementation")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "is_custom_application" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("is_custom_application")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "will_require_training" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("will_require_training")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "size_deliverables" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("size_deliverables")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "has_other_projects" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("has_other_projects")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "will_be_synchronized" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("will_be_synchronized")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "is_domain_separated" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("is_domain_separated")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "size_foundation_data" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("size_foundation_data")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "size_transaction_data" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("size_transaction_data")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "size_cmdb" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("size_cmdb")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "size_scope_creep" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("size_scope_creep")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "is_current_customer" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("is_current_customer")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+			else if (wgtOft.question == "is_reasonable" &&
+							 wgtOft.question_choice == $scope.page.g_form.getValue("is_reasonable")) {
+				$scope.updateWeightOffset(wgtOft);
+			}
+		}
+	};
+
+	
+	
+	
+
+	// Update each activity weight with another question choice offset
+	$scope.updateWeightOffset = function(wgtOft) {
+		
+		// Update stock activity percentage
+		$scope.data.reqEst += wgtOft.req_offset != null ? parseInt(wgtOft.req_offset) : 0;
+		$scope.data.qaEst += wgtOft.qa_offset != null ? parseInt(wgtOft.qa_offset) : 0;
+		$scope.data.trainEst += wgtOft.train_offset != null ? parseInt(wgtOft.train_offset) : 0;
+		$scope.data.implEst += wgtOft.implement_offset != null ? parseInt(wgtOft.implement_offset) : 0;
+		$scope.data.docsEst += wgtOft.docs_offset != null ? parseInt(wgtOft.docs_offset) : 0;
+		$scope.data.wtyEst += wgtOft.wty_offset != null ? parseInt(wgtOft.wty_offset) : 0;
+		$scope.data.contgEst += wgtOft.contingency_offset != null ? parseInt(wgtOft.contingency_offset) : 0;
+		
+		// Update temp activity percentages to match stock
+		$scope.data.reqEst_Temp = String($scope.data.reqEst);
+		$scope.data.qaEst_Temp = String($scope.data.qaEst);
+		$scope.data.trainEst_Temp = String($scope.data.trainEst);
+		$scope.data.implEst_Temp = String($scope.data.implEst);
+		$scope.data.docsEst_Temp = String($scope.data.docsEst);
+		$scope.data.wtyEst_Temp = String($scope.data.wtyEst);
+		$scope.data.contgEst_Temp = String($scope.data.contgEst);
+		
+		// Update all requirements now to match the activity percentage adjustments
+		$scope.updateAllRequirementsPercentages();
+	}
+
+	
+	
+	
+	
+	// Update all requirements to match new activity percentages
+	$scope.updateAllRequirementsPercentages = function() {
+		
+		// Update all estimates across the entire app
+		for (var i = 0; i < $scope.data.applicationSuites.length; i++) {
+			
+			for (var j = 0; j < $scope.data.applicationSuites[i].app.length; j++) {
+				
+				for (var k = 0; k < $scope.data.applicationSuites[i].app[j].appRequirement.length; k++) {
+					
+					var baseDevEst = parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].base_dev_est);
+					var qty = parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].quantity);
+					var amount = baseDevEst * qty;
+					var devEst = 0, reqEst = 0, qaEst = 0, trainEst = 0, implEst = 0, docsEst = 0, wtyEst = 0;
+					
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].dev_est = devEst = parseFloat(amount).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].req_est = reqEst = parseFloat(amount * ($scope.data.reqEst * 0.01)).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].qa_est = qaEst = parseFloat(amount * ($scope.data.qaEst * 0.01)).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].train_est = trainEst = parseFloat(amount * ($scope.data.trainEst * 0.01)).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].impl_est = implEst = parseFloat(amount * ($scope.data.implEst * 0.01)).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].docs_est = docsEst = parseFloat(amount * ($scope.data.docsEst * 0.01)).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].wty_est = wtyEst = parseFloat(amount * ($scope.data.wtyEst * 0.01)).toFixed(2);
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].contg_est = parseFloat((parseFloat(devEst) + parseFloat(reqEst) + parseFloat(qaEst) + parseFloat(trainEst) + parseFloat(implEst) + parseFloat(docsEst) + parseFloat(wtyEst)) * ($scope.data.contgEst * 0.01)).toFixed(2);
+					
+					$scope.data.applicationSuites[i].app[j].appRequirement[k].SUM = 
+						parseFloat(
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].dev_est).toFixed(2)) +  
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].req_est).toFixed(2)) +  
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].qa_est).toFixed(2)) +   
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].train_est).toFixed(2)) +    
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].impl_est).toFixed(2)) +   
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].docs_est).toFixed(2)) +  
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].wty_est).toFixed(2)) +  
+						parseFloat(parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].contg_est).toFixed(2))
+					).toFixed(2);
+				}
+			}
+		}
+		
+		// Get total sum by each app
+		$scope.getTotals();
+	}
+	
+	
+	
+	
+	
+	// Get total sum by each app
+	$scope.getTotals = function() {
+		
+		$scope.data.appSuiteTotals = [];
+
+		for (var i = 0; i < $scope.data.applicationSuites.length; i++) {
+			
+			var appTotals = [];
+			for (var j = 0; j < $scope.data.applicationSuites[i].app.length; j++) {
+				
+				var appTotal = 0;
+				for (var k = 0; k < $scope.data.applicationSuites[i].app[j].appRequirement.length; k++) {
+					if ($scope.data.applicationSuites[i].app[j].appRequirement[k].active == true) {
+						appTotal += parseFloat($scope.data.applicationSuites[i].app[j].appRequirement[k].SUM)
+					}
+				}
+				
+				appTotals.push(parseFloat(appTotal).toFixed(2));
+			}
+			
+			$scope.data.appSuiteTotals.push(appTotals);
+		}
+	}
+
+	
+	
+	
+	
+	// Show apps within app suite
+	$scope.showApps = function(index) {
+
+		// Toggle application suite on/off
+		$scope.data.applicationSuites[index].active = !$scope.data.applicationSuites[index].active;
+
+		// Toggle apps on/off to match application suite
+		for (var i = 0; i < $scope.data.applicationSuites[index].app.length; i++) {	
+			
+			// If app suite is now active, app is default active, and app is not already duplicated
+			// Activate app
+			if ($scope.data.applicationSuites[index].active == true && 
+					$scope.data.applicationSuites[index].app[i].default_active == true && 
+					$scope.data.applicationSuites[index].app[i].is_duplicated == false) {
+				$scope.data.applicationSuites[index].app[i].active = true;
+			}
+			
+			// Deactivate app
+			else if ($scope.data.applicationSuites[index].active == false) {
+				$scope.data.applicationSuites[index].app[i].active = false;
+			}
+
+			// Go show application requirements within app
+			$scope.showAppRequirements(index, i, false);
+		}
+		
+		// Get total row
+		$scope.getTotals();
+	}
+	
+
+	
+	
+
+	// Show app requirements within app
+	$scope.showAppRequirements = function(parentIndex, index, canUpdateApp) {
+
+		// canUpdateApp: Means app has been toggled at the app level (not app suite level)
+		// Toggle app on/off
+		if (canUpdateApp == true) {
+			$scope.data.applicationSuites[parentIndex].app[index].active = !$scope.data.applicationSuites[parentIndex].app[index].active;
+		}
+		
+		
+		// Deactivate duplicates of app
+		// Turn OFF default_active flag so apps are no longer defaulted if the app suite is toggled off -> on
+		if ($scope.data.applicationSuites[parentIndex].app[index].active == true) {
+			$scope.duplicateOtherApps($scope.data.applicationSuites[parentIndex].app[index]);
+			$scope.data.applicationSuites[parentIndex].app[index].default_active = false;
+		}
+		else if ($scope.data.applicationSuites[parentIndex].app[index].active == false && 
+						$scope.data.applicationSuites[parentIndex].app[index].default_active == false) {
+			$scope.duplicateOtherApps($scope.data.applicationSuites[parentIndex].app[index]);
+			$scope.data.applicationSuites[parentIndex].app[index].default_active = false;
+		}
+		
+
+		// If toggled at app level
+		if (canUpdateApp == true) {
+			// For all app requirements
+			for (var i = 0; i < $scope.data.applicationSuites[parentIndex].app[index].appRequirement.length; i++) {
+				// If app is now active
+				// Activate app requirement, deactivate duplicates of app requirement
+				if ($scope.data.applicationSuites[parentIndex].app[index].active == true) {
+					$scope.data.applicationSuites[parentIndex].app[index].appRequirement[i].active = true;
+					$scope.duplicateOtherAppRequirements($scope.data.applicationSuites[parentIndex].app[index].appRequirement[i]);
+				}
+
+				// If app is not active
+				// Deactivate app requirement
+				else if ($scope.data.applicationSuites[parentIndex].app[index].active == false) {
+					$scope.data.applicationSuites[parentIndex].app[index].appRequirement[i].active = false;
+				}
+			}
+			
+			// Get total row
+			$scope.getTotals();
+		}
+		
+		
+		// If toggled at app suite level
+		else if (canUpdateApp == false) {
+			// For all app requirements
+			for (var i = 0; i < $scope.data.applicationSuites[parentIndex].app[index].appRequirement.length; i++) {
+				// If app is now active and app requirement is not already duplicated
+				// Activate app requirement, deactivate duplicates of app requirement
+				if ($scope.data.applicationSuites[parentIndex].app[index].active == true && 
+						$scope.data.applicationSuites[parentIndex].app[index].appRequirement[i].is_duplicated == false) {
+					$scope.data.applicationSuites[parentIndex].app[index].appRequirement[i].active = true;
+					$scope.duplicateOtherAppRequirements($scope.data.applicationSuites[parentIndex].app[index].appRequirement[i]);
+				}
+
+				// If app is not active
+				// Deactivate app requirement
+				else if ($scope.data.applicationSuites[parentIndex].app[index].active == false) {
+					$scope.data.applicationSuites[parentIndex].app[index].appRequirement[i].active = false;
+				}
+			}
+		}
+	}
+
+	
+	
+	
+	
+	$scope.duplicateOtherApps = function(appObject) {
+		
+		var joinSysID = appObject.join_sys_id;
+		var sysID = appObject.sys_id;
+		
+		
+		for (var i = 0; i < $scope.data.applicationSuites.length; i++) {
+			for (var j = 0; j < $scope.data.applicationSuites[i].app.length; j++) {
+				
+				// Find duplicate
+				if ($scope.data.applicationSuites[i].app[j].sys_id == sysID && 
+						$scope.data.applicationSuites[i].app[j].join_sys_id != joinSysID) {
+					
+					// Set inactive and flag duplicate status of duplicate if this app is active
+					if (appObject.active == true) {
+						$scope.data.applicationSuites[i].app[j].active = false;
+						$scope.data.applicationSuites[i].app[j].is_duplicated = true;
+					}
+					// Vice versa
+					else {
+						$scope.data.applicationSuites[i].app[j].active = false;
+						$scope.data.applicationSuites[i].app[j].is_duplicated = false;
+					}
+					
+					// Set duplicate status of originator
+					appObject.is_duplicated = false;
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	$scope.duplicateOtherAppRequirements = function(appRequirementObject) {
+		
+		var joinSysID = appRequirementObject.join_sys_id;
+		var sysID = appRequirementObject.sys_id;
+		
+		
+		for (var i = 0; i < $scope.data.applicationSuites.length; i++) {
+			for (var j = 0; j < $scope.data.applicationSuites[i].app.length; j++) {
+				for (var k = 0; k < $scope.data.applicationSuites[i].app[j].appRequirement.length; k++) {
+					
+					// Find duplicate
+					if ($scope.data.applicationSuites[i].app[j].appRequirement[k].sys_id == sysID && 
+							$scope.data.applicationSuites[i].app[j].appRequirement[k].join_sys_id != joinSysID) {
+						
+						// Set inactive and flag duplicate status of duplicate if this app requirement is active
+						if (appRequirementObject.active == true) {
+							$scope.data.applicationSuites[i].app[j].appRequirement[k].active = false;
+							$scope.data.applicationSuites[i].app[j].appRequirement[k].is_duplicated = true;
+						}
+						// Vice versa
+						else {
+							$scope.data.applicationSuites[i].app[j].appRequirement[k].active = false;
+							$scope.data.applicationSuites[i].app[j].appRequirement[k].is_duplicated = false;
+						}
+						
+						// Set duplicate status of originator
+						appRequirementObject.is_duplicated = false;
+					}
+				}
+			}
+		}
+	}
+
+
+	
+	
+	
+	// Update target app requirement after base dev estimate or quantity adjustment
+	$scope.updateRequirementPercentages = function(parentParentIndex, parentIndex, index, attribute, amount) {
+		
+		// Do not allow blank or non-numeric values
+		if (attribute == 'base_dev_est' && (amount == "" || amount == null || amount == undefined || isNaN(amount) == true)) {
+			amount = 0;
+			$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].base_dev_est = String(amount);
+		}
+		else if (attribute == 'quantity' && (amount == "" || amount == null || amount == undefined || isNaN(amount) == true)) {
+			amount = 0;
+			$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].quantity = amount;
+		}
+			
+		
+		// Calculate amount depending on if argument passed was the base dev estimate or the quantity
+		if (attribute == 'base_dev_est')
+			amount = parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].quantity) * amount;
+
+		else if (attribute == 'quantity')
+			amount = parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].base_dev_est) * amount;
+
+		var devEst = 0, reqEst = 0, qaEst = 0, trainEst = 0, implEst = 0, docsEst = 0, wtyEst = 0;
+		
+		// Spot update an estimate when the base dev estimate or quantity has changed
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].dev_est = devEst = parseFloat(amount).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].req_est = reqEst = parseFloat(amount * ($scope.data.reqEst * 0.01)).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].qa_est = qaEst = parseFloat(amount * ($scope.data.qaEst * 0.01)).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].train_est = trainEst = parseFloat(amount * ($scope.data.trainEst * 0.01)).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].impl_est = implEst = parseFloat(amount * ($scope.data.implEst * 0.01)).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].docs_est = docsEst = parseFloat(amount * ($scope.data.docsEst * 0.01)).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].wty_est = wtyEst = parseFloat(amount * ($scope.data.wtyEst * 0.01)).toFixed(2);
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].contg_est = parseFloat((parseFloat(devEst) + parseFloat(reqEst) + parseFloat(qaEst) + parseFloat(trainEst) + parseFloat(implEst) + parseFloat(docsEst) + parseFloat(wtyEst)) * ($scope.data.contgEst * 0.01)).toFixed(2);
+										
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].SUM = 
+			parseFloat(
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].dev_est).toFixed(2)) +  
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].req_est).toFixed(2)) +  
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].qa_est).toFixed(2)) +   
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].train_est).toFixed(2)) +    
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].impl_est).toFixed(2)) +   
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].docs_est).toFixed(2)) +  
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].wty_est).toFixed(2)) +  
+			parseFloat(parseFloat($scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[index].contg_est).toFixed(2))
+			).toFixed(2);
+		
+		// Get total row
+		$scope.getTotals();
+	}
+	
+	
+	
+	
+	
+	// Add row to capture another requirement
+	$scope.addRow = function(parentParentIndex, parentIndex) {
+
+		// Add a brand new row
+		var appRequirement = {};
+		appRequirement.cnt = $scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement.length;
+		appRequirement.name = "*Name of requirement*";
+		appRequirement.notes = "*Add notes here*";
+		appRequirement.app_reference =  $scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[0].app_reference;
+		appRequirement.type = "variable"
+		appRequirement.base_dev_est = "0";
+		appRequirement.quantity = 1;
+		appRequirement.dev_est = 0;
+		appRequirement.req_est = 0;
+		appRequirement.qa_est = 0;
+		appRequirement.train_est = 0;
+		appRequirement.impl_est = 0;
+		appRequirement.docs_est = 0;
+		appRequirement.wty_est = 0;
+		appRequirement.contg_est = 0;
+		appRequirement.SUM = 0;
+		appRequirement.active = true;
+		appRequirement.join_sys_id = $scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[0].join_sys_id;
+		appRequirement.sys_id = $scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement[0].sys_id;
+		appRequirement.is_duplicated = false;
+
+		$scope.data.applicationSuites[parentParentIndex].app[parentIndex].appRequirement.push(appRequirement);	
+	}
+	
+	
+	
+	
+
+	// Highlight requirement if it is new
+	$scope.highlightNewRequirement = function(parentParentIndex, parentIndex, index, name, element) {
+
+		// If requirement is new, highlight it completely
+		if (name == "*Name of requirement*")
+			document.execCommand('selectAll',false,null);
+	}
+	
+	
+	
+	
+	
+	// Highlight requirement if it is new
+	$scope.highlightNewNotes = function(parentParentIndex, parentIndex, index, notes, element) {
+
+		// If requirement is new, highlight it completely
+		if (notes == "*Add notes here*")
+			document.execCommand('selectAll',false,null);
+	}
+	
+	
+	
+	
+	
+	$scope.$watch(function($scope) {
+		
+		// Capture data in rootScope to be used later by new version
+		$rootScope.app_picklist_data = $scope.data;
+	});
+	
+	
+	
+	
+	
+	// If record is a reload from a prior version
+	if ($scope.data.record != null && $scope.data.record != undefined) {
+		
+		// Populate Main Variables
+		$scope.page.g_form.setValue("customer", $scope.data.temp.customer);
+		$scope.page.g_form.setValue("project_title", $scope.data.temp.project_title);
+		$scope.page.g_form.setValue("assumptions", $scope.data.temp.assumptions);
+		
+		// Populate Assessment Variables
+		$scope.page.g_form.setValue("size_business_area", $scope.data.temp.size_business_area);
+		$scope.page.g_form.setValue("size_organization", $scope.data.temp.size_organization);
+		$scope.page.g_form.setValue("has_customer_project_manager", $scope.data.temp.has_customer_project_manager);
+		$scope.page.g_form.setValue("is_net_new_implementation", $scope.data.temp.is_net_new_implementation);
+		$scope.page.g_form.setValue("is_custom_application", $scope.data.temp.is_custom_application);
+		$scope.page.g_form.setValue("will_require_training", $scope.data.temp.will_require_training);
+		$scope.page.g_form.setValue("size_deliverables", $scope.data.temp.size_deliverables);
+		$scope.page.g_form.setValue("has_other_projects", $scope.data.temp.has_other_projects);
+		$scope.page.g_form.setValue("will_be_synchronized", $scope.data.temp.will_be_synchronized);
+		$scope.page.g_form.setValue("is_domain_separated", $scope.data.temp.is_domain_separated);
+		$scope.page.g_form.setValue("size_foundation_data", $scope.data.temp.size_foundation_data);
+		$scope.page.g_form.setValue("size_transaction_data", $scope.data.temp.size_transaction_data);
+		$scope.page.g_form.setValue("size_cmdb", $scope.data.temp.size_cmdb);
+		$scope.page.g_form.setValue("size_scope_creep", $scope.data.temp.size_scope_creep);
+		$scope.page.g_form.setValue("is_current_customer", $scope.data.temp.is_current_customer);
+		$scope.page.g_form.setValue("is_reasonable", $scope.data.temp.is_reasonable);
+		
+		// Populate Application Picklist Data
+		$scope.data.appSuiteTotals = $scope.data.temp.appSuiteTotals;
+		$scope.data.applicationSuites = $scope.data.temp.applicationSuites;
+		$scope.data.contgEst = $scope.data.temp.contgEst;
+		$scope.data.contgEst_Temp = $scope.data.temp.contgEst_Temp;
+		$scope.data.docsEst = $scope.data.temp.docsEst;
+		$scope.data.docsEst_Temp = $scope.data.temp.docsEst_Temp;
+		$scope.data.implEst = $scope.data.temp.implEst;
+		$scope.data.implEst_Temp = $scope.data.temp.implEst_Temp;
+		$scope.data.qaEst = $scope.data.temp.qaEst;
+		$scope.data.qaEst_Temp = $scope.data.temp.qaEst_Temp;
+		$scope.data.reqEst = $scope.data.temp.reqEst;
+		$scope.data.reqEst_Temp = $scope.data.temp.reqEst_Temp;
+		$scope.data.trainEst = $scope.data.temp.trainEst;
+		$scope.data.trainEst_Temp = $scope.data.temp.trainEst_Temp;
+		$scope.data.weightOffsets = $scope.data.temp.weightOffsets;
+		$scope.data.wtyEst = $scope.data.temp.wtyEst;
+		$scope.data.wtyEst_Temp = $scope.data.temp.wtyEst_Temp;
+		
+		// Clear out of memory
+		$scope.data.temp = "";
+	}
+
+	// Update all weight offsets upon load
+	// This will trigger all requirement percentages to update after
+	else {
+		$scope.updateAllWeightOffsets();	
+	}
+	
+};
+
+
+
+
+
+/*
+		$rootScope.$on("field.change", function(evt, parms) {
+			action: 'get_project_activity_weight_offset',
+			g_form: $scope.page.g_form
+			variable_name: parms.field.name,
+			variable_io_sys_id: parms.field.variable_name,
+			variable_sys_id:parms.field.sys_id,
+			value: parms.newValue
+		});
+*/
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/*Instructions Container*/
+
+.instructions-container {
+  padding-left:-5px;
+}
+
+
+
+
+
+/*Application Picklist and Table*/
+
+ul, li {
+  list-style-type: none;
+}
+
+.container-fluid &gt; ul {
+  padding-left:0px;
+}
+
+.appreq-table {
+    border: dotted 1px black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+
+.appreq-table thead th {
+    background-color: #EDF7FF; // Primary
+    border: dotted 1px black;
+    color: black;
+    padding: 10px;
+    text-align: left;
+  	font-weight:bold;
+}
+
+.appreq-table tbody td {
+    border: dotted 1px black;
+    color: #333;
+    padding: 5px;
+}
+
+.appreq-table {
+  table-layout: auto;
+  width: 100%;
+}
+
+
+.appreq-table tr {
+  height:45px;
+}
+
+.cell-highlight {
+  border:5px solid #BAE8BA!important;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.app-suite, .app-container {
+  margin-top:25px;
+}
+
+.add-row {
+  text-align:center;
+  cursor:pointer;
+}
+
+
+.strikethrough-inactive {
+  text-decoration: line-through;
+  color:blue;  
+}
+
+.strikethrough-duplicate {
+  text-decoration: line-through;
+  color:red;
+}
+
+
+
+
+/*Multi Select Listbox*/
+
+/*The container*/
+.checkbox-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height:0px;
+}
+th.ng-binding {
+  font-weight:lighter;
+}
+/*Hide the browser's default checkbox*/
+.checkbox-label input {
+  opacity: 0;
+}
+/*Create a custom checkbox*/
+.checkbox-custom {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border:1px solid grey;
+  cursor:pointer;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-label:hover input ~ .checkbox-custom {
+  background-color: #CBCDCE;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-label input:checked ~ .checkbox-custom {
+  background-color: #0275d8;
+}
+
+/*Create the checkmark/indicator (hidden when not checked)*/
+.checkbox-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/*Show the checkmark when checked*/
+.checkbox-label input:checked ~ .checkbox-custom:after {
+  display: block;
+}
+/*Style the checkmark/indicator*/
+.checkbox-label .checkbox-custom:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>application_picklist</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Application Picklist</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	// Get app requirements by app and app suite
+	data.applicationSuites = [];
+	var appSuitesCnt = 0;
+	var appsCnt = 0;
+	var appRequirementsCnt = 0;
+	
+	
+	// Application Suite
+	var applicationSuitesGR = new GlideRecord("x_icir_dealmaker_application_suite");
+	applicationSuitesGR.orderBy("order");
+	applicationSuitesGR.query();
+	while (applicationSuitesGR.next()) {
+		
+		var appSuite = {};
+		appSuite.cnt = appSuitesCnt; appSuitesCnt++; appsCnt = 0; appRequirementsCnt = 0;
+		appSuite.name = String(applicationSuitesGR.name);
+		appSuite.active = false;
+		appSuite.app = [];
+		
+		// Application
+		var applicationsGR = new GlideRecord("x_icir_dealmaker_m2m_app_app_suite");
+		applicationsGR.addQuery("application_suite", applicationSuitesGR.getUniqueValue());
+		applicationsGR.orderBy("order");
+		applicationsGR.query();
+		while (applicationsGR.next()) {
+			
+			var app = {};
+			app.cnt = appsCnt; appsCnt++; appRequirementsCnt = 0;
+			app.name = applicationsGR.application.getDisplayValue();
+			app.active = false;
+			app.default_active = String(applicationsGR.default_active) == 'false' ? false : true;
+			app.join_sys_id = String(applicationsGR.getUniqueValue());
+			app.sys_id = String(applicationsGR.application.sys_id);
+			app.is_duplicated = false;
+			app.appRequirement = [];
+			
+			// Application Requirement
+			var applicationRequirementsGR = new GlideRecord("x_icir_dealmaker_m2m_app_requirement_app");
+			applicationRequirementsGR.addQuery("application", String(applicationsGR.application));
+			applicationRequirementsGR.orderBy("order");
+			applicationRequirementsGR.query();
+			while (applicationRequirementsGR.next()) {
+				
+				var appRequirement = {};
+				appRequirement.cnt = appRequirementsCnt; appRequirementsCnt++;
+				appRequirement.name = applicationRequirementsGR.application_requirement.getDisplayValue();
+				appRequirement.notes = String(applicationRequirementsGR.application_requirement.notes) == "" ? "*Add notes here*" : String(applicationRequirementsGR.application_requirement.notes);
+				appRequirement.app_reference = applicationRequirementsGR.application.getDisplayValue();
+				appRequirement.type = String(applicationRequirementsGR.application_requirement.type);
+				appRequirement.base_dev_est = String(applicationRequirementsGR.application_requirement.base_development_estimate);
+				appRequirement.quantity = parseInt(applicationRequirementsGR.application_requirement.default_quantity);
+				appRequirement.dev_est = 0;
+				appRequirement.req_est = 0;
+				appRequirement.qa_est = 0;
+				appRequirement.train_est = 0;
+				appRequirement.impl_est = 0;
+				appRequirement.docs_est = 0;
+				appRequirement.wty_est = 0;
+				appRequirement.contg_est = 0;
+				appRequirement.SUM = 0;
+				appRequirement.active = false;
+				appRequirement.join_sys_id = String(applicationsGR.getUniqueValue() + "." + applicationRequirementsGR.getUniqueValue());
+				appRequirement.sys_id = String(applicationRequirementsGR.application_requirement.sys_id);
+				appRequirement.is_duplicated = false;
+				
+				app.appRequirement.push(appRequirement);
+			}
+			
+			
+
+			// Application Requirement
+			if (String(applicationsGR.application.type) == "module") {
+				var applicationRequirementsGR = new GlideRecord("x_icir_dealmaker_m2m_app_requirement_app");
+				applicationRequirementsGR.addEncodedQuery("application.name=Application File");
+				applicationRequirementsGR.orderBy("order");
+				applicationRequirementsGR.query();
+				while (applicationRequirementsGR.next()) {
+
+					var appRequirement = {};
+					appRequirement.cnt = appRequirementsCnt; appRequirementsCnt++;
+					appRequirement.name = applicationRequirementsGR.application_requirement.getDisplayValue();
+					appRequirement.notes = String(applicationRequirementsGR.application_requirement.notes) == "" ? "*Add notes here*" : String(applicationRequirementsGR.application_requirement.notes);
+					appRequirement.app_reference = applicationRequirementsGR.application.getDisplayValue();
+					appRequirement.type = String(applicationRequirementsGR.application_requirement.type);
+					appRequirement.base_dev_est = String(applicationRequirementsGR.application_requirement.base_development_estimate);
+					appRequirement.quantity = parseInt(applicationRequirementsGR.application_requirement.default_quantity);
+					appRequirement.dev_est = 0;
+					appRequirement.req_est = 0;
+					appRequirement.qa_est = 0;
+					appRequirement.train_est = 0;
+					appRequirement.impl_est = 0;
+					appRequirement.docs_est = 0;
+					appRequirement.wty_est = 0;
+					appRequirement.contg_est = 0;
+					appRequirement.SUM = 0;
+					appRequirement.active = false;
+					appRequirement.join_sys_id = String(applicationsGR.getUniqueValue() + "." + applicationRequirementsGR.getUniqueValue());
+					appRequirement.sys_id = String(applicationsGR.application.sys_id + "." + applicationRequirementsGR.application_requirement.sys_id); // Add application in this sys_id to give proper app context to duplicate
+					appRequirement.is_duplicated = false;
+					
+					app.appRequirement.push(appRequirement);
+				}
+			}
+			
+			
+			
+			appSuite.app.push(app);
+		}
+		
+		data.applicationSuites.push(appSuite);
+	}
+	
+	
+	
+	// Get weight offsets for variable choices
+	data.weightOffsets = [];
+	var weightOffsetGR = new GlideRecord("x_icir_dealmaker_project_activity_weight_offset");
+	weightOffsetGR.query();
+	while (weightOffsetGR.next()) {
+		
+		var offset = {};
+		offset.question = String(weightOffsetGR.question.name);
+		offset.question_choice = weightOffsetGR.getDisplayValue("question_choice");
+		offset.req_offset = weightOffsetGR.getValue("req_offset");
+		offset.qa_offset = weightOffsetGR.getValue("qa_offset");
+		offset.train_offset = weightOffsetGR.getValue("train_offset");
+		offset.implement_offset = weightOffsetGR.getValue("implement_offset");
+		offset.docs_offset = weightOffsetGR.getValue("docs_offset");
+		offset.wty_offset = weightOffsetGR.getValue("wty_offset");
+		offset.contingency_offset = weightOffsetGR.getValue("contingency_offset");
+		
+		data.weightOffsets.push(offset);
+	}
+	
+	
+	
+	// If record is a reload from a prior version
+	var record = $sp.getParameter("record");
+	data.record = record;
+	data.temp = "";
+	if (record != null && record != undefined) {
+		var projectEstimateGR = new GlideRecord("x_icir_dealmaker_project_estimate");
+		projectEstimateGR.addQuery("sys_id", record);
+		projectEstimateGR.query();
+		if (projectEstimateGR.next()) {
+			
+			var temp = {};
+			
+			// Temp Store Main Variables
+			temp.customer = String(projectEstimateGR.customer);
+			temp.project_title = String(projectEstimateGR.project_title);
+			temp.assumptions = String(projectEstimateGR.assumptions);
+			
+			// Temp Store Assessment Variables
+			temp.size_business_area = String(projectEstimateGR.size_business_area);
+			temp.size_organization = String(projectEstimateGR.size_organization);
+			temp.has_customer_project_manager = String(projectEstimateGR.has_customer_project_manager);
+			temp.is_net_new_implementation = String(projectEstimateGR.is_net_new_implementation);
+			temp.is_custom_application = String(projectEstimateGR.is_custom_application);
+			temp.will_require_training = String(projectEstimateGR.will_require_training);
+			temp.size_deliverables = String(projectEstimateGR.size_deliverables);
+			temp.has_other_projects = String(projectEstimateGR.has_other_projects);
+			temp.will_be_synchronized = String(projectEstimateGR.will_be_synchronized);
+			temp.is_domain_separated = String(projectEstimateGR.is_domain_separated);
+			temp.size_foundation_data = String(projectEstimateGR.size_foundation_data);
+			temp.size_transaction_data = String(projectEstimateGR.size_transaction_data);
+			temp.size_cmdb = String(projectEstimateGR.size_cmdb);
+			temp.size_scope_creep = String(projectEstimateGR.size_scope_creep);
+			temp.is_current_customer = String(projectEstimateGR.is_current_customer);
+			temp.is_reasonable = String(projectEstimateGR.is_reasonable);
+			
+			// Parse Application Picklist Data
+			var jsonString = projectEstimateGR.estimate_data;
+			var jsonParse = JSON.parse(jsonString);
+			
+			// Temp Store Application Picklist Data
+			temp.appSuiteTotals = jsonParse.appSuiteTotals;
+			temp.applicationSuites = jsonParse.applicationSuites;
+			temp.contgEst = jsonParse.contgEst;
+			temp.contgEst_Temp = jsonParse.contgEst_Temp;
+			temp.docsEst = jsonParse.docsEst;
+			temp.docsEst_Temp = jsonParse.docsEst_Temp;
+			temp.implEst = jsonParse.implEst;
+			temp.implEst_Temp = jsonParse.implEst_Temp;
+			temp.qaEst = jsonParse.qaEst;
+			temp.qaEst_Temp = jsonParse.qaEst_Temp;
+			temp.reqEst = jsonParse.reqEst;
+			temp.reqEst_Temp = jsonParse.reqEst_Temp;
+			temp.trainEst = jsonParse.trainEst;
+			temp.trainEst_Temp = jsonParse.trainEst_Temp;
+			temp.weightOffsets = jsonParse.weightOffsets;
+			temp.wtyEst = jsonParse.wtyEst;
+			temp.wtyEst_Temp = jsonParse.wtyEst_Temp;
+			
+			data.temp = temp;
+		}
+	}
+
+	
+
+	/*
+	// Generate random password
+	function getRandomString() {
+		var result = "";
+		
+		var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';  
+		var charactersLength = characters.length;  
+		for ( var i = 0; i < 10; i++ ) {  
+			result += characters.charAt(Math.floor(Math.random() * charactersLength));  
+		}
+		
+		return result;
+	}
+	*/
+
+})();
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-16 06:50:08</sys_created_on>
+        <sys_id>4c7cf009db2c68100abe72143996195f</sys_id>
+        <sys_mod_count>1671</sys_mod_count>
+        <sys_name>Application Picklist</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sp_widget_4c7cf009db2c68100abe72143996195f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-01 21:13:56</sys_updated_on>
+        <template><![CDATA[<div class="instructions-container">
+  <p>
+    ${Select only the application suites, applications, and requirements that you need.}
+  </p>
+  <p>
+    ${Before beginning, click below to set activity weight percentages based on your answers above.}
+  </p>
+  <p>
+    <button type="button" class="btn btn-primary" ng-click="updateAllWeightOffsets()">
+      ${Apply Activity Weights (%)}
+    </button>
+  </p>
+  <p>
+    ${Override activity weight percentages by clicking to select, and typing over them in the header row.}
+  </p>
+  <p>
+    ${All columns highlighted by green borders are editable.  Only certain quantities are editable.}
+  </p>
+  <p>
+    ${Applications or requirements with <span class="strikethrough-duplicate">red strikethrough</span> are duplicated in other sections.  Some apps and requirements are available in multiple app suites, but can only be chosen once.}
+  </p>
+  <p>
+    ${Click the + sign to add additional requirements.}
+  </p>
+</div>
+
+
+
+<div class="container-fluid">
+  
+  <ul>
+    <li ng-repeat="appSuite in data.applicationSuites track by $index">
+
+
+
+      <div class="checkbox-container">
+        <table class="table app-suite">
+          <thead>
+            <tr>
+              <th>
+                <label class="checkbox-label">
+                  <input type="checkbox" id="appSuite-{{$index}}" class="checkbox-default" ng-checked="appSuite.active" ng-click="showApps($index)" />
+                  <span class="checkbox-custom"></span>
+                  {{appSuite.name}}
+                </label>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+
+
+      <ul>
+        <li ng-repeat="app in appSuite.app track by $index" ng-show="appSuite.active"> 
+
+          <div class="checkbox-container">
+            <table class="table app-container">
+              <thead>
+                <tr>
+                  <th>
+                    <label class="checkbox-label" ng-class="app.active == false && app.is_duplicated == true ? 'strikethrough-duplicate' : 'null'">
+                      <input type="checkbox" class="checkbox-default" ng-checked="app.active" ng-click="showAppRequirements($parent.$index, $index, true)" />
+                      <span class="checkbox-custom"></span>
+                      {{app.name}}
+                    </label>
+                  </th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+
+
+
+
+
+          <table class="appreq-table fixed table-striped" ng-show="app.active">
+
+            <thead>
+              <tr>
+                <th width="20" style="text-align:center"></th>
+                <th width="100">Name</th>
+                <th width="100">Notes</th>
+                <th width="20">Base Dev</th>
+                <th width="20">Quantity</th>
+                <th width="20">Dev - BD*Qty</th>
+                <th width="20" class="cell-highlight">Req - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.reqEst_Temp" ng-change="replaceActivityPercentage()"></span>%</th>
+                <th width="20" class="cell-highlight">QA - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.qaEst_Temp" ng-change="replaceActivityPercentage()"></span>%</th>
+                <th width="20" class="cell-highlight">Train - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.trainEst_Temp" ng-change="replaceActivityPercentage()"></span>%</th>
+                <th width="20" class="cell-highlight">Impl - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.implEst_Temp" ng-change="replaceActivityPercentage()"></span>%</th>
+                <th width="20" class="cell-highlight">Docs - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.docsEst_Temp" ng-change="replaceActivityPercentage()"></span>%</th>
+                <th width="20" class="cell-highlight">Wty - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.wtyEst_Temp" ng-change="replaceActivityPercentage()"></span>%</th>
+                <th width="20" class="cell-highlight">Contg - <span contenteditable="true" onclick="document.execCommand('selectAll',false,null)" ng-model="data.contgEst_Temp" ng-change="replaceActivityPercentage()"></span>% Σ</th>
+              	<th width="20"><b>SUM</b></th>
+              </tr>
+            </thead>
+
+
+
+            <tbody>     
+              <tr ng-repeat="appRequirement in app.appRequirement track by $index" ng-show="appSuite.active && app.active">
+
+                <td width="20" style="text-align:center; padding-left:20px;">
+                  <label class="checkbox-label">
+                    <input TABINDEX=1 type="checkbox" class="checkbox-default" ng-checked="appRequirement.active" ng-model="appRequirement.active" ng-change="duplicateOtherAppRequirements(appRequirement, appRequirement.join_sys_id, appRequirement.sys_id, appRequirement.active); getTotals()" />
+                    <span class="checkbox-custom"></span>
+                  </label>
+                </td>
+                <td width="100" class="cell-highlight" style="cursor:text!important">              
+                  <span TABINDEX=2 ng-class="{'strikethrough-inactive' : appRequirement.active == false && appRequirement.is_duplicated == false, 
+                                   'strikethrough-duplicate' : appRequirement.active == false && appRequirement.is_duplicated == true}"
+                        contenteditable="true" 
+                        onfocus="setCursor(this)" 
+                        id="req{{appSuite.cnt}}{{app.cnt}}{{appRequirement.cnt}}"
+                        style="cursor:text!important"
+                        ng-model="appRequirement.name"
+                        ng-click="highlightNewRequirement(appSuite.cnt, app.cnt, appRequirement.cnt, appRequirement.name, this)">
+                  </span>
+                </td>
+                <td width="100" class="cell-highlight" style="cursor:text!important">              
+                  <span TABINDEX=3 
+                        contenteditable="true"  
+                        onfocus="setCursor(this)" 
+                        style="cursor:text!important"
+                        ng-model="appRequirement.notes"
+                        ng-click="highlightNewNotes(appSuite.cnt, app.cnt, appRequirement.cnt, appRequirement.notes, this)">
+                  </span>
+                </td>
+                <td width="20" class="cell-highlight" onclick="document.execCommand('selectAll',false,null)" style="cursor:text!important">
+                  <span TABINDEX=4 contenteditable="true" 
+                        ng-model="appRequirement.base_dev_est"
+                        ng-change="updateRequirementPercentages(appSuite.cnt, app.cnt, appRequirement.cnt, 'base_dev_est', appRequirement.base_dev_est)"
+                        onfocus="document.execCommand('selectAll',false,null)" 
+                        onclick="document.execCommand('selectAll',false,null)">
+                  </span>
+                </td>
+                <td width="20" ng-class="{'cell-highlight': appRequirement.type == 'variable'}">
+                  <input TABINDEX=5 type="number" ng-model="appRequirement.quantity" 
+                         class="form-control" 
+                         onclick="select()" step="1"
+                         value="{{appRequirement.quantity}}"
+                         min="0" 
+                         ng-change="updateRequirementPercentages(appSuite.cnt, app.cnt, appRequirement.cnt, 'quantity', appRequirement.quantity)" 
+                         ng-if="appRequirement.type == 'variable'" />
+
+                  <span ng-if="appRequirement.type == 'fixed'" class="unselectable">{{appRequirement.quantity}}</span>
+                </td>
+                <td width="20">
+                  {{appRequirement.dev_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.req_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.qa_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.train_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.impl_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.docs_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.wty_est}}
+                </td>
+                <td width="20">
+                  {{appRequirement.contg_est}}
+                </td>
+                <td width="20" style="font-size:16px">
+                  <b>{{appRequirement.SUM}}</b>
+                </td>
+              </tr>
+            </tbody>
+            
+            
+            
+            <tbody>
+              <tr>
+                <td class="add-row" 
+                    ng-click="addRow(appSuite.cnt, app.cnt)">
+                  <i class="fa fa-plus fa-lg"></i>
+                </td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="visibility: hidden"></td>
+                <td style="font-size:16px">
+                  <b>{{data.appSuiteTotals[appSuite.cnt][app.cnt]}}</b>
+                </td>
+              </tr>
+            </tbody>
+            
+          </table>
+
+        </li>
+      </ul>
+
+
+
+    </li>
+  </ul>
+</div>
+
+
+
+<script type="text/javascript">
+  // Put cursor at the end of the contenteditable element
+	function setCursor(el) {
+    var range = top.document.createRange();
+    var referenceNode = top.document.getElementById(el.id);
+    var range = top.document.createRange();
+    var sel = top.window.getSelection();
+    range.setStart(el, 1);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.focus();
+
+	}
+</script>
+
+]]></template>
+    </sp_widget>
+</record_update>

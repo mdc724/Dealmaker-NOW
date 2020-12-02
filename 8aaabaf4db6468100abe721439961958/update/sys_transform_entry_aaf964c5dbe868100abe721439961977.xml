@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_entry">
+    <sys_transform_entry action="INSERT_OR_UPDATE">
+        <choice_action>ignore</choice_action>
+        <coalesce>false</coalesce>
+        <coalesce_case_sensitive>false</coalesce_case_sensitive>
+        <coalesce_empty_fields>false</coalesce_empty_fields>
+        <date_format>yyyy-MM-dd HH:mm:ss</date_format>
+        <map display_value="Dealmaker Application Requirements Transform">3967d3f0dbe468100abe7214399619a2</map>
+        <reference_value_field/>
+        <source_field>[Script]</source_field>
+        <source_script><![CDATA[answer = (function transformEntry(source) {
+
+	/*
+	var appSuiteDisplays = source.u_application_suites.toString().split(",");
+	var appSuiteSysIDs = [];
+	for (var i = 0; i < appSuiteDisplays.length; i++) {
+		var applicationSuiteGR = new GlideRecord("x_icir_dealmaker_application_suite");
+		applicationSuiteGR.addQuery("acronym", appSuiteDisplays[i]);
+		applicationSuiteGR.query();
+		if (applicationSuiteGR.next()) {
+			appSuiteSysIDs.push(String(applicationSuiteGR.getUniqueValue()));
+		}
+	}
+	return appSuiteSysIDs.toString();
+	*/
+	
+	return "";
+
+})(source);]]></source_script>
+        <source_table>u_imp_tmpl_x_icir_dealmaker_application_requirement</source_table>
+        <sys_class_name>sys_transform_entry</sys_class_name>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-16 05:32:27</sys_created_on>
+        <sys_id>aaf964c5dbe868100abe721439961977</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>[Script]</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_transform_entry_aaf964c5dbe868100abe721439961977</sys_update_name>
+        <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+        <sys_updated_on>2020-11-28 00:53:58</sys_updated_on>
+        <target_field>application_suites</target_field>
+        <target_table>x_icir_dealmaker_application_requirement</target_table>
+        <use_source_script>true</use_source_script>
+    </sys_transform_entry>
+</record_update>

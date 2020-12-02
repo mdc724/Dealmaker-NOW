@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Project Activity Weight Offset" max_length="40" name="x_icir_dealmaker_project_activity_weight_offset" sizeclass="42" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Contingency Offset" max_length="15" name="contingency_offset" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Docs Offset" max_length="15" name="docs_offset" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Implement Offset" max_length="15" name="implement_offset" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="QA Offset" max_length="15" name="qa_offset" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Question" max_length="32" name="question" reference="item_option_new" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Question Choice" max_length="32" name="question_choice" reference="question_choice" reference_qual="javascript:'question=' + current.question + '^EQ';" type="reference" use_dependent_field="true" use_reference_qualifier="advanced"/>
+        <element attributes="edge_encryption_enabled=true" label="Req Offset" max_length="15" name="req_offset" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Train Offset" max_length="15" name="train_offset" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Wty Offset" max_length="15" name="wty_offset" type="integer"/>
+        <index name="index">
+            <element name="question"/>
+        </index>
+        <index name="index2">
+            <element name="question_choice"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>8a10d5f8db7c2850af7ce8cd139619bd</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_m2m_app_requirement_app">
+    <x_icir_dealmaker_m2m_app_requirement_app action="INSERT_OR_UPDATE">
+        <application display_value="Discovery">64b32441dbe868100abe721439961977</application>
+        <application_requirement display_value="Discovery MID Server Architecture">b5537401db2c68100abe721439961949</application_requirement>
+        <order>400</order>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-27 23:53:14</sys_created_on>
+        <sys_id>8a10d5f8db7c2850af7ce8cd139619bd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+        <sys_updated_on>2020-11-29 20:07:55</sys_updated_on>
+    </x_icir_dealmaker_m2m_app_requirement_app>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 21:32:34</sys_created_on>
+        <sys_id>0facccb1dbf42c50af7ce8cd1396193c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2020-11-27 18:53:14</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_0facccb1dbf42c50af7ce8cd1396193c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:32:34</sys_updated_on>
+        <tablename>x_icir_dealmaker_m2m_app_requirement_app</tablename>
+    </sys_metadata_link>
+</record_update>

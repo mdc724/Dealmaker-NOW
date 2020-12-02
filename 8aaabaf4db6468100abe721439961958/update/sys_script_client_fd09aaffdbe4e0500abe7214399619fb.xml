@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>assumptions</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Show Field Messages onLoad</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	g_form.showFieldMsg("project_length", "Set the 'Days' part of this duration only. Count days based on total time and not business time. e.g. A project that runs Jan 1 to Mar 31 is 90 days.");
+	g_form.showFieldMsg("suggested_staffing_plan_table", "Add and adjust project resources and costs down below to calculate the 'Estimated Cost' and 'Suggested Staffing Plan' tables against the project length.");
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-25 03:53:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fd09aaffdbe4e0500abe7214399619fb</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Show Field Messages onLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_script_client_fd09aaffdbe4e0500abe7214399619fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-25 03:59:32</sys_updated_on>
+        <table>x_icir_dealmaker_project_estimate</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

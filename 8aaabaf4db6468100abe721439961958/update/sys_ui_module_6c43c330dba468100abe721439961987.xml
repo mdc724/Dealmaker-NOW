@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Dealmaker NOW">937e3af8db6468100abe72143996195d</application>
+        <filter/>
+        <name>Application Requirements</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>admin</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-15 22:00:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6c43c330dba468100abe721439961987</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Application Requirements</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_ui_module_6c43c330dba468100abe721439961987</sys_update_name>
+        <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+        <sys_updated_on>2020-11-15 22:00:41</sys_updated_on>
+        <table>x_icir_dealmaker_application_requirement</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>

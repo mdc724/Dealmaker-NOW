@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>634536eedbe0ec100abe72143996190d</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_project_activity_weight_offset">
+    <x_icir_dealmaker_project_activity_weight_offset action="INSERT_OR_UPDATE">
+        <contingency_offset/>
+        <docs_offset/>
+        <implement_offset>2</implement_offset>
+        <qa_offset>2</qa_offset>
+        <question display_value="Will customer environments be synchronized prior to deployment?">d5413ecadb286c100abe72143996197f</question>
+        <question_choice display_value="No">4caf0346dba86c100abe72143996191e</question_choice>
+        <req_offset/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-21 07:29:06</sys_created_on>
+        <sys_id>634536eedbe0ec100abe72143996190d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-21 07:40:10</sys_updated_on>
+        <train_offset/>
+        <wty_offset>2</wty_offset>
+    </x_icir_dealmaker_project_activity_weight_offset>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 21:29:28</sys_created_on>
+        <sys_id>ddfb40b1dbf42c50af7ce8cd139619f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_ddfb40b1dbf42c50af7ce8cd139619f5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:29:28</sys_updated_on>
+        <tablename>x_icir_dealmaker_project_activity_weight</tablename>
+    </sys_metadata_link>
+</record_update>

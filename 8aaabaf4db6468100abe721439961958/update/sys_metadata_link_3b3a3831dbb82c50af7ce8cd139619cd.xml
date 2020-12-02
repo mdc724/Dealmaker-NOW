@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>178a2831db782c50af7ce8cd139619ff</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_application">
+    <x_icir_dealmaker_application action="INSERT_OR_UPDATE">
+        <name>Custom Application Roles</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 23:43:08</sys_created_on>
+        <sys_id>178a2831db782c50af7ce8cd139619ff</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-01 00:36:12</sys_updated_on>
+        <type>platform_fundamental</type>
+    </x_icir_dealmaker_application>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-01 00:51:42</sys_created_on>
+        <sys_id>3b3a3831dbb82c50af7ce8cd139619cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Custom Application Roles</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_3b3a3831dbb82c50af7ce8cd139619cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-01 00:51:42</sys_updated_on>
+        <tablename>x_icir_dealmaker_application</tablename>
+    </sys_metadata_link>
+</record_update>

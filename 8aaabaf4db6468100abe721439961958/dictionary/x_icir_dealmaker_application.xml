@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Application" max_length="40" name="x_icir_dealmaker_application" sizeclass="110" type="collection">
+        <element label="Name" max_length="255" name="name" type="string"/>
+        <element choice="3" default="module" label="Type" max_length="40" name="type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Platform Fundamental" sequence="100" value="platform_fundamental"/>
+                <element inactive_on_update="false" label="Module" sequence="200" value="module"/>
+                <element inactive_on_update="false" label="Feature/Plugin" sequence="300" value="feature_plugin"/>
+                <element inactive_on_update="false" label="Integration" sequence="400" value="integration"/>
+            </choice>
+        </element>
+    </element>
+</database>

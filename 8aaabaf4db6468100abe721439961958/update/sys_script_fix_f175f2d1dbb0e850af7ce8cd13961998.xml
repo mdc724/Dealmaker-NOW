@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>Convert App Relationships</name>
+        <record_for_rollback>false</record_for_rollback>
+        <run_once>true</run_once>
+        <script><![CDATA[var applicationRequirementGR = new GlideRecord("x_icir_dealmaker_application_requirement");
+applicationRequirementGR.query();
+while (applicationRequirementGR.next()) {
+
+		var application = String(applicationRequirementGR.getValue("application"));
+		var applicationRequirement = String(applicationRequirementGR.getUniqueValue());
+				
+		var joinGR = new GlideRecord("x_icir_dealmaker_m2m_app_requirement_app");
+		joinGR.initialize();
+		joinGR.application = application;
+		joinGR.application_requirement = applicationRequirement;
+		joinGR.insert();
+}
+
+
+
+var applicationGR = new GlideRecord("x_icir_dealmaker_application");
+applicationGR.query();
+while (applicationGR.next()) {
+
+		var applicationSuite = String(applicationGR.getValue("application_suite"));
+		var application = String(applicationGR.getUniqueValue());
+		
+		var joinGR = new GlideRecord("x_icir_dealmaker_m2m_app_app_suite");
+		joinGR.initialize();
+		joinGR.application_suite = applicationSuite;
+		joinGR.application = application;
+		joinGR.insert();
+}
+
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-29 20:35:08</sys_created_on>
+        <sys_id>f175f2d1dbb0e850af7ce8cd13961998</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Convert App Relationships</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_script_fix_f175f2d1dbb0e850af7ce8cd13961998</sys_update_name>
+        <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+        <sys_updated_on>2020-11-29 20:35:08</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

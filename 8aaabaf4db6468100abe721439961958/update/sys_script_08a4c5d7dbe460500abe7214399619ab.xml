@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_icir_dealmaker_m2m_proj_resource_proj_estimate</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Estimated Cost</name>
+        <order>200</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	// Get project length's total number of hours
+	var totalHours = 0;
+	var totalMonths = 0;
+	
+	// Query project estimate table
+	var projectEstimateGR = new GlideRecord("x_icir_dealmaker_project_estimate");
+	projectEstimateGR.addQuery("sys_id", current.project_estimate);
+	projectEstimateGR.query();
+	if (projectEstimateGR.next()) {
+		
+		// Get hours from project length field
+		var projectLength = projectEstimateGR.project_length.getDisplayValue().split(" ");
+		totalHours = parseInt(projectLength[0]) * 5.33; // 160 / 30
+		if (projectLength.length > 2)
+			totalHours += parseFloat(projectLength[2]); //parseInt(projectLength[2]);
+		
+		// Add remaining hours
+		totalMonths = Math.ceil(totalHours / 160);
+	}
+	
+	
+	
+	// Create suggested staffing plan table
+	var tableString = "<table><tbody><tr><td height='50' width='200' style='background:#D9D9D9; border:1px solid grey'></td>";
+	
+	// Add months headers
+	for (var i = 0; i < totalMonths; i++) {
+		tableString += "<td height='50' width='200' style='background:#D9D9D9; border:1px solid grey'><b>" + 
+			"Month " + (i + 1) + 
+			"</b></td>";
+	}
+	
+	// Finish row
+	tableString += "</tr>";
+
+	
+	
+	// Add resources and their suggested hours
+	// Get costs of onshore vs. offshore
+	var staffingTotalHours = 0, totalCosts = 0, onshoreTotalCosts = 0, offshoreTotalCosts = 0;
+	var projectEstProjResGR = new GlideRecord("x_icir_dealmaker_m2m_proj_resource_proj_estimate");
+	projectEstProjResGR.addQuery("project_estimate", current.project_estimate);
+	projectEstProjResGR.orderBy("order");
+	projectEstProjResGR.query();
+	while (projectEstProjResGR.next()) {
+		
+		tableString += "<tr><td height='50' width='200' style='border:1px solid grey'><b>" + 
+			projectEstProjResGR.project_resource.name + 
+			"</b></td>";
+		
+		for (var i = 0; i < totalMonths; i++) {
+			tableString += "<td height='50' width='200' style='border:1px solid grey'>" + 
+				160 + 
+				"</td>"; staffingTotalHours += 160;
+			
+			
+			// Sum costs
+			totalCosts += 160 * parseFloat(projectEstProjResGR.rate);
+			if (projectEstProjResGR.project_resource.type == "onshore")
+				onshoreTotalCosts += 160 * parseFloat(projectEstProjResGR.rate);
+			else
+				offshoreTotalCosts += 160 * parseFloat(projectEstProjResGR.rate);
+		}
+		
+		tableString += "</tr>";
+	}
+	
+	// Close row
+	tableString += "<tr>";
+	
+	// Add blank rows before total row
+	if (totalMonths >= 2) {
+		for (var i = 0; i < totalMonths - 1; i++) {
+			tableString += "<td height='50' width='200' style='visibility:none'></td>";
+		}
+	}
+	
+	// Add total row
+	tableString += "<td height='50' width='200' style='border:1px solid grey'><b>Total</b></td>";
+	tableString += "<td height='50' width='200' style='border:1px solid grey'><b>" + staffingTotalHours + "</b></td>";
+	
+	// Finish table
+	tableString += "</tr></tbody></table>";
+	
+	
+	
+	///////////////////////////////////////
+	
+	
+	
+	// Create estimated cost table
+	var tableString2 = "<table><tbody>";
+	
+	// Add estimated costs for onshore
+	tableString2 += "<tr><td height='50' width='200' style='border:1px solid grey'><b>" + 
+		"Total Onshore" + 
+		"</b></td>";
+
+	tableString2 += "<td height='50' width='200' style='border:1px solid grey'><b>" + 
+		onshoreTotalCosts + 
+		"</b></td>";
+	
+	// Add estimated costs for offshore
+	tableString2 += "<tr><td height='50' width='200' style='border:1px solid grey'><b>" + 
+		"Total Offshore" + 
+		"</b></td>";
+
+	tableString2 += "<td height='50' width='200' style='border:1px solid grey'><b>" + 
+		offshoreTotalCosts + 
+		"</b></td>";
+	
+	// Add total costs
+	tableString2 += "<tr><td height='50' width='200' style='border:1px solid grey'><b>" + 
+		"Total Cost" + 
+		"</b></td>";
+
+	tableString2 += "<td height='50' width='200' style='border:1px solid grey'><b>" + 
+		totalCosts + 
+		"</b></td>";
+	
+	// Finish row
+	tableString2 += "</tr></tbody></table>";
+	
+	
+	
+	///////////////////////////////////////
+	
+	
+	
+	// Write to project estimate table
+	var projectEstimateGR = new GlideRecord("x_icir_dealmaker_project_estimate");
+	projectEstimateGR.addQuery("sys_id", current.project_estimate);
+	projectEstimateGR.query();
+	if (projectEstimateGR.next()) {
+		projectEstimateGR.suggested_staffing_plan_table = tableString;
+		projectEstimateGR.estimated_cost_table = tableString2;
+		projectEstimateGR.update();
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-23 07:15:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>08a4c5d7dbe460500abe7214399619ab</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>Update Estimated Cost</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_script_08a4c5d7dbe460500abe7214399619ab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-23 21:49:21</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=08a4c5d7dbe460500abe7214399619ab"/>
+</record_update>

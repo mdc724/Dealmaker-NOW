@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">35c39bf1db6c2c100abe7214399619bb</sp_column>
+        <sp_widget display_value="Related Catalog Item">806f40990fab2300b7b2c8337a767e6f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-19 01:46:48</sys_created_on>
+        <sys_id>75c39bf1db6c2c100abe7214399619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Related Items</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sp_instance_75c39bf1db6c2c100abe7214399619bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-19 01:46:48</sys_updated_on>
+        <title>Related Items</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"source_table": {
+		"value": "sc_2_sc",
+		"displayValue": "sc_2_sc"
+	},
+	"source_column": {
+		"value": "sc_cat_item",
+		"displayValue": "sc_cat_item"
+	},
+	"target_column": {
+		"value": "related_sc_cat_item",
+		"displayValue": "related_sc_cat_item"
+	},
+	"title": {
+		"value": "Related Items",
+		"displayValue": "Related Items"
+	},
+	"max_number": {
+		"value": 5,
+		"displayValue": "5"
+	},
+	"source_id": {
+		"value": "",
+		"displayValue": ""
+	},
+	"use_full_width": {
+		"value": "false",
+		"displayValue": "false"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=75c39bf1db6c2c100abe7214399619bd"/>
+</record_update>

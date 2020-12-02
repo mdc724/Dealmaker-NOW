@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="size_business_area" label="Number of business area employees" language="en" table="x_icir_dealmaker_project_estimate">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>size_business_area</element>
+            <help/>
+            <hint/>
+            <label>Number of business area employees</label>
+            <language>en</language>
+            <name>x_icir_dealmaker_project_estimate</name>
+            <plural>Number of business area employees</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-11-22 22:06:10</sys_created_on>
+            <sys_id>30a74b03db2060500abe7214399619e5</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Number of business area employees</sys_name>
+            <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+            <sys_update_name>sys_documentation_x_icir_dealmaker_project_estimate_size_business_area_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-11-22 22:14:23</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

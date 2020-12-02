@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="aeaffec5dbf0a850af7ce8cd13961967" sys_domain="global" table="x_icir_dealmaker_m2m_app_app_suite" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 02:39:10</sys_created_on>
+            <sys_id>2eaffec5dbf0a850af7ce8cd1396196d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 02:39:10</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>application</element>
+            <position>1</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 02:39:10</sys_created_on>
+            <sys_id>2aaffec5dbf0a850af7ce8cd1396196e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 02:39:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 02:39:10</sys_created_on>
+            <sys_id>aeaffec5dbf0a850af7ce8cd1396196e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 02:39:10</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>application_suite</element>
+            <position>3</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 02:39:10</sys_created_on>
+            <sys_id>26affec5dbf0a850af7ce8cd1396196f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 02:39:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>4</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 02:39:10</sys_created_on>
+            <sys_id>aaaffec5dbf0a850af7ce8cd1396196f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 02:39:10</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>order</element>
+            <position>5</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 20:03:30</sys_created_on>
+            <sys_id>9cbe621ddb70e850af7ce8cd139619cc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 20:03:30</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>default_active</element>
+            <position>6</position>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 21:07:56</sys_created_on>
+            <sys_id>9c7db6d9dbb0e850af7ce8cd1396196e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_icir_dealmaker_m2m_app_app_suite" sys_domain="global" view="Default view">aeaffec5dbf0a850af7ce8cd13961967</sys_ui_section>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 21:07:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_icir_dealmaker_m2m_app_app_suite</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+            <sys_created_on>2020-11-29 02:39:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>aeaffec5dbf0a850af7ce8cd13961967</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_icir_dealmaker_m2m_app_app_suite</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+            <sys_update_name>sys_ui_section_aeaffec5dbf0a850af7ce8cd13961967</sys_update_name>
+            <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+            <sys_updated_on>2020-11-29 02:39:10</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

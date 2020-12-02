@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>d463b401db2c68100abe721439961935</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_application_requirement">
+    <x_icir_dealmaker_application_requirement action="INSERT_OR_UPDATE">
+        <base_development_estimate>40</base_development_estimate>
+        <default_quantity>1</default_quantity>
+        <name>Configure HR Notications</name>
+        <notes/>
+        <sys_created_by>mike.cornell@infocenter.io</sys_created_by>
+        <sys_created_on>2020-11-16 06:10:34</sys_created_on>
+        <sys_id>d463b401db2c68100abe721439961935</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>mike.cornell@infocenter.io</sys_updated_by>
+        <sys_updated_on>2020-11-29 02:40:30</sys_updated_on>
+        <type>fixed</type>
+    </x_icir_dealmaker_application_requirement>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-23 10:03:39</sys_created_on>
+        <sys_id>bedb6d93dba860500abe7214399619c1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Configure HR Notications</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_bedb6d93dba860500abe7214399619c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:28:03</sys_updated_on>
+        <tablename>x_icir_dealmaker_application_requirement</tablename>
+    </sys_metadata_link>
+</record_update>

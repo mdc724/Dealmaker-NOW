@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>b9c7772ddb742c50af7ce8cd1396191a</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_icir_dealmaker_m2m_app_requirement_app">
+    <x_icir_dealmaker_m2m_app_requirement_app action="INSERT_OR_UPDATE">
+        <application display_value="GRC: Vendor Portal">eca7b32ddb742c50af7ce8cd139619f3</application>
+        <application_requirement display_value="GRC VP: Pages, Navigation and Content Layouts">3d33b001db2c68100abe72143996198f</application_requirement>
+        <order>200</order>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 20:01:18</sys_created_on>
+        <sys_id>b9c7772ddb742c50af7ce8cd1396191a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 20:01:35</sys_updated_on>
+    </x_icir_dealmaker_m2m_app_requirement_app>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-30 21:32:13</sys_created_on>
+        <sys_id>bd9c4cb1dbf42c50af7ce8cd13961993</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2020-11-30 15:01:18</sys_name>
+        <sys_package display_value="Dealmaker NOW" source="x_icir_dealmaker">8aaabaf4db6468100abe721439961958</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dealmaker NOW">8aaabaf4db6468100abe721439961958</sys_scope>
+        <sys_update_name>sys_metadata_link_bd9c4cb1dbf42c50af7ce8cd13961993</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-30 21:32:13</sys_updated_on>
+        <tablename>x_icir_dealmaker_m2m_app_requirement_app</tablename>
+    </sys_metadata_link>
+</record_update>

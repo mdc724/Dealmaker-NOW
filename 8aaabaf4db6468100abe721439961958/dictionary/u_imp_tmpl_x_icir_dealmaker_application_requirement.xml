@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="Imp Tmpl X Icir Dealmaker Application Requirement" max_length="40" name="u_imp_tmpl_x_icir_dealmaker_application_requirement" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Application" label="Application" max_length="1000" name="u_application" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Applications" max_length="1000" name="u_applications" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Application Suites" max_length="1000" name="u_application_suites" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Base Development Estimate" max_length="1000" name="u_base_development_estimate" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Default Quantity" max_length="1000" name="u_default_quantity" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="1000" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Notes" max_length="1000" name="u_notes" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Order" label="Order" max_length="1000" name="u_order" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Requirement" max_length="1000" name="u_requirement" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Type" max_length="1000" name="u_type" type="string"/>
+    </element>
+</database>

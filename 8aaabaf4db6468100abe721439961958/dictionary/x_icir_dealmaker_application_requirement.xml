@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Application Requirement" max_length="40" name="x_icir_dealmaker_application_requirement" sizeclass="537" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Base Development Estimate" max_length="40" name="base_development_estimate" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" default="1" label="Default Quantity" max_length="15" name="default_quantity" type="integer"/>
+        <element label="Name" max_length="500" name="name" type="string"/>
+        <element label="Notes" max_length="1000" name="notes" type="string"/>
+        <element choice="3" default="fixed" label="Type" max_length="40" name="type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Fixed" sequence="100" value="fixed"/>
+                <element inactive_on_update="false" label="Variable" sequence="200" value="variable"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="name"/>
+        </index>
+    </element>
+</database>
