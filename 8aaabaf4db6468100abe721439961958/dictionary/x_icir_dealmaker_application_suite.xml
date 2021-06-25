@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Application Suite" max_length="40" name="x_icir_dealmaker_application_suite" sizeclass="14" type="collection">
+    <element label="Application Suite" max_length="40" name="x_icir_dealmaker_application_suite" sizeclass="15" type="collection">
         <element display="true" label="Acronym" max_length="40" name="acronym" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Name" max_length="255" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Order" max_length="15" name="order" type="integer"/>

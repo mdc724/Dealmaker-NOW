@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Dealmaker M2m App Requirement App" max_length="40" name="x_icir_dealmaker_m2m_app_requirement_app" sizeclass="542" type="collection">
+    <element label="Dealmaker M2m App Requirement App" max_length="40" name="x_icir_dealmaker_m2m_app_requirement_app" sizeclass="590" type="collection">
         <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Application" max_length="32" name="application" reference="x_icir_dealmaker_application" type="reference"/>
         <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Application Requirement" max_length="32" name="application_requirement" reference="x_icir_dealmaker_application_requirement" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Order" max_length="15" name="order" type="integer"/>
